@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head">
+    <title>title</title>
+</head>
+<body>
+<div th:replace="partials/navbar :: navbar">&nbsp;</div>
+
+<div class="main-card card border-0 shadow m-auto mt-4">
+    <div class="card-body">
+        <p>Name: <span th:text="${event.getName()}"></span></p>
+        <p>Participants: <span th:text="${event.getParticipants()}"></span></p>
+        <p>Date: <span th:text="${event.getDate()}"></span></p>
+        <p>Start time: <span th:text="${event.getStartTime()}"></span></p>
+        <p>End time: <span th:text="${event.getEndTime()}"></span></p>
+        <a th:href="${#request.getHeader('referer')}" class="btn btn-secondary">Back</a>
+    </div>
+</div>
+</body>
+</html>
